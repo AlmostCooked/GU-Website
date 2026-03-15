@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gran Unity</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+/* Smooth carousel */
+.carousel-item{
+transition: transform 1.5s ease-in-out;
+}
+
+/* Glass cards */
+.feature-card{
+background: rgba(255,255,255,0.08);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+border:1px solid rgba(255,255,255,0.15);
+border-radius:12px;
+transition: all 0.3s ease;
+cursor:pointer;
+}
+
+.feature-card img{
+transition: all 0.3s ease;
+}
+
+.feature-card:hover{
+transform:scale(0.95);
+}
+
+.feature-card:hover img{
+filter:blur(2px);
+}
+
+.feature-card.active{
+border:2px solid #0d6efd;
+}
+
+/* Fade sections */
+.fade-section{
+opacity:0;
+transform:translateY(40px);
+transition:all 1s ease;
+}
+
+.fade-section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* Glass container */
+.glass-section{
+background: rgba(255,255,255,0.05);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+border:1px solid rgba(255,255,255,0.1);
+}
+
+/* Infinite game banner */
+
+.game-banner{
+overflow:hidden;
+position:relative;
+}
+
+.game-track{
+display:flex;
+gap:25px;
+width:max-content;
+animation: scrollGames 30s linear infinite;
+}
+
+.game-card{
+min-width:260px;
+height:160px;
+border-radius:12px;
+overflow:hidden;
+cursor:pointer;
+transition:transform 0.4s ease;
+}
+
+.game-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:0.4s;
+}
+
+/* hover effect */
+
+.game-card:hover{
+transform:scale(1.08);
+}
+
+.game-card:hover img{
+filter:brightness(70%);
+}
+
+.game-banner:hover .game-track{
+animation-play-state: paused;
+}
+/* animation */
+
+@keyframes scrollGames{
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-50%);
+}
+
+}
+
+</style>
+</head>
+
+<body class="bg-dark text-white">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+
+<div class="container">
+
+<a class="navbar-brand" href="#">
+<img src="text-1773470223567.png" class="img-fluid" style="max-height:50px;">
+</a>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+
+<ul class="navbar-nav text-center">
+
+<li class="nav-item dropdown">
+
+<a class="nav-link dropdown-toggle text-dark active" href="#" role="button" data-bs-toggle="dropdown">
+Games
+</a>
+
+<ul class="dropdown-menu text-center p-3">
+
+<li class="mb-2">
+<a class="dropdown-item" href="#"><img src="Umamusume.png" style="max-width:120px;"></a>
+</li>
+
+<li class="mb-2">
+<a class="dropdown-item" href="#"><img src="Hoyoverse.png" style="max-width:120px;"></a>
+</li>
+
+<li>
+<a class="dropdown-item" href="#"><img src="kuro.svg" style="max-width:120px;"></a>
+</li>
+
+</ul>
+
+</li>
+
+<li class="nav-item">
+<a class="nav-link text-dark" href="#">Contact</a>
+</li>
+
+</ul>
+
+</div>
+</div>
+</nav>
+
+
+<!-- HERO -->
+<div class="container py-5">
+
+<div class="row align-items-center">
+
+<div class="col-lg-6 text-center text-md-start mb-4 mb-md-0">
+
+<h1 class="fw-bold mb-3">Welcome To The Gran Unity Website</h1>
+
+<p>
+Gran Unity is a community for gacha game fans. Share builds,
+discover strategies, and help other players improve their gameplay.
+</p>
+
+<button class="btn btn-primary mt-2">Learn More</button>
+
+</div>
+
+<div class="col-lg-6">
+
+<div id="gameCarousel"
+class="carousel slide"
+data-bs-ride="carousel"
+data-bs-interval="3000"
+data-bs-pause="false">
+
+<div class="carousel-inner rounded">
+
+<div class="carousel-item active">
+<img src="Images/Slideruma.jpg" class="d-block w-100">
+</div>
+
+<div class="carousel-item">
+<img src="Images/Genshin3.avif" class="d-block w-100">
+</div>
+
+<div class="carousel-item">
+<img src="Images/HSR.png" class="d-block w-100">
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- COMMUNITY SECTION -->
+<div class="container py-5 rounded glass-section">
+
+<div class="row align-items-center mb-5 fade-section">
+
+<div class="col-md-6">
+<img src="Images/WuWa2.jpg" class="img-fluid rounded">
+</div>
+
+<div class="col-md-6">
+<h2>Join the Gran Unity Community</h2>
+<p>Share builds, strategies, and experiences with other gacha players.</p>
+</div>
+
+</div>
+
+<div class="row align-items-center fade-section">
+
+<div class="col-md-6 order-md-2">
+<img src="Images/WuWa3.webp" class="img-fluid rounded">
+</div>
+
+<div class="col-md-6 order-md-1">
+<h2>Share Tips and Discover Builds</h2>
+<p>Discover optimized builds from experienced players.</p>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- GAME SELECTION CARDS -->
+<div class="container mt-5">
+
+<div class="row text-center g-4">
+
+<div class="col-md-4">
+<a class="card feature-card text-decoration-none active"
+data-bs-toggle="tab"
+data-bs-target="#builds">
+
+<img src="Umamusume.png" class="card-img-top p-4" style="height:140px;object-fit:contain;">
+</a>
+</div>
+
+<div class="col-md-4">
+<a class="card feature-card text-decoration-none"
+data-bs-toggle="tab"
+data-bs-target="#guides">
+
+<img src="Hoyoverse.png" class="card-img-top p-4" style="height:140px;object-fit:contain;">
+</a>
+</div>
+
+<div class="col-md-4">
+<a class="card feature-card text-decoration-none"
+data-bs-toggle="tab"
+data-bs-target="#community">
+
+<img src="kuro.svg" class="card-img-top p-4" style="height:140px;object-fit:contain;">
+</a>
+</div>
+
+</div>
+
+
+<div class="tab-content mt-5">
+
+<div class="tab-pane fade show active" id="builds">
+<h3>Umamusume Pretty Derby</h3>
+<p>Browse powerful builds from other players.</p>
+</div>
+
+<div class="tab-pane fade" id="guides">
+<h3>Hoyoverse</h3>
+<p>Find helpful guides and farming routes.</p>
+</div>
+
+<div class="tab-pane fade" id="community">
+<h3>Kuro Games</h3>
+<p>See discussions and community advice.</p>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FEATURED GAMES -->
+<div class="container py-5">
+
+<h2 class="text-center mb-4">Featured Games</h2>
+
+<div class="game-banner">
+
+<div class="game-track">
+
+<!-- ORIGINAL SET -->
+<div class="game-card"><img src="Images/Umamusume_Pretty_Derby_game_cover.jpg"></div>
+<div class="game-card"><img src="Images/Genshin-Impact-1.webp"></div>
+<div class="game-card"><img src="Images/Honkai Star Rail.jpg"></div>
+<div class="game-card"><img src="Images/zenless.jpg"></div>
+<div class="game-card"><img src="Images/Wuthering.jpg"></div>
+<div class="game-card"><img src="Images/PGR.jfif"></div>
+
+<!-- DUPLICATE SET (for seamless looping) -->
+<div class="game-card"><img src="Images/Umamusume_Pretty_Derby_game_cover.jpg"></div>
+<div class="game-card"><img src="Images/Genshin-Impact-1.webp"></div>
+<div class="game-card"><img src="Images/Honkai Star Rail.jpg"></div>
+<div class="game-card"><img src="Images/zenless.jpg"></div>
+<div class="game-card"><img src="Images/Wuthering.jpg"></div>
+<div class="game-card"><img src="Images/PGR.jfif"></div>
+
+</div>
+</div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+/* Fade animation */
+
+const faders=document.querySelectorAll(".fade-section");
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+},{threshold:0.2});
+
+faders.forEach(el=>observer.observe(el));
+
+/* Tab card highlight */
+
+const cards=document.querySelectorAll('[data-bs-toggle="tab"]');
+
+cards.forEach(card=>{
+card.addEventListener("click",function(){
+cards.forEach(c=>c.classList.remove("active"));
+this.classList.add("active");
+});
+});
+
+/* Auto horizontal scroll */
+
+
+let scrollAmount = 0;
+let direction = 1; // 1 = right, -1 = left
+
+function autoScroll(){
+
+scrollAmount += direction;
+
+scrollContainer.scrollLeft = scrollAmount;
+
+// when reaching right end
+if(scrollAmount >= scrollContainer.scrollWidth - scrollContainer.clientWidth){
+direction = -1;
+}
+
+// when reaching left end
+if(scrollAmount <= 0){
+direction = 1;
+}
+
+}
+
+setInterval(autoScroll, 20);
+
+
+</script>
+
+</body>
+</html>
